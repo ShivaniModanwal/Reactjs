@@ -9,15 +9,15 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "daily"
-       #open-pull-requests-limit: 10  # Allow up to 10 open PRs at a time
-    #reviewers:
-     # - "your-github-username"  # Automatically request reviews from this user
-    #labels:
-     # - "dependencies"  # Apply this label to Dependabot PRs
-    #ignore:
-     # - dependency-name: "react-scripts"  # Ignore updates for create-react-app scripts
-      #  versions: ["5.x"]  # Example: Ignore major version 5 updates
-    #commit-message:
-     # prefix: "chore(deps):"  # Custom commit message prefix
+       open-pull-requests-limit: 10  # Allow up to 10 open PRs at a time
+    reviewers:
+     - "tanisha18"  # Automatically request reviews from this user
+    labels:
+      - "dependencies"  # Apply this label to Dependabot PRs
+    ignore:
+      - dependency-name: "react-scripts"  # Ignore updates for create-react-app scripts
+        versions: ["5.x"]  # Example: Ignore major version 5 updates
+    commit-message:
+      prefix: "chore(deps):"  # Custom commit message prefix
       #include: "scope"  # Include package name in commit messages
     #rebase-strategy: "auto"  # Automatically rebase when conflicts occur
