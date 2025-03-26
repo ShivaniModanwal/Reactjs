@@ -1,23 +1,21 @@
-# To get started with Dependabot version updates, you'll need to specify which
-# package ecosystems to update and where the package manifests are located.
-# Please see the documentation for all configuration options:
-# https://docs.github.com/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+# Dependabot configuration file for automated dependency updates
+# Documentation: https://docs.github.com/code-security/dependabot
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
+  - package-ecosystem: "npm"  # Package manager (npm for Node.js/React projects)
+    directory: "/"  # Root directory where package.json is located
     schedule:
-      interval: "daily"
-       open-pull-requests-limit: 10  # Allow up to 10 open PRs at a time
+      interval: "daily"  # Check for updates every day
+    open-pull-requests-limit: 10  # Allow up to 10 open PRs at a time
     reviewers:
-     - "tanisha18"  # Automatically request reviews from this user
+      - "tanisha18"  # Automatically request reviews from this GitHub user
     labels:
-      - "dependencies"  # Apply this label to Dependabot PRs
+      - "dependencies"  # Apply "dependencies" label to PRs
     ignore:
       - dependency-name: "react-scripts"  # Ignore updates for create-react-app scripts
-        versions: ["5.x"]  # Example: Ignore major version 5 updates
+        versions: ["5.x"]  # Ignore version 5.x updates
     commit-message:
       prefix: "chore(deps):"  # Custom commit message prefix
-      #include: "scope"  # Include package name in commit messages
-    #rebase-strategy: "auto"  # Automatically rebase when conflicts occur
+      include: "scope"  # Include package name in commit messages
+    rebase-strategy: "auto"  # Automatically rebase PRs if conflicts occur
